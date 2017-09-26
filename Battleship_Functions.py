@@ -45,66 +45,6 @@ def print_gamespace(player,opponent):
           + "  " + labels[iter_row])
   print("   ---------------------      ---------------------")
 
-'''
-# define aircraft carrier location
-
-print()
-print("Place Aircraft Carrier (*****)")
-
-alpha_coords = ["A","B","C","D","E","F","G","H","I","J"]
-numbr_coords = ["1","2","3","4","5","6","7","8","9","10"]
-ac_orient = 'none'
-ac_row = 'none'
-ac_col = 'none'
-
-while ac_orient == 'none':
-  ac_orient = input("Horizontal or Verical? (Input 'H' or 'V'): ")
-  if ac_orient != 'H' and ac_orient != 'V':
-    ac_orient = 'none'
-    print("Error: incorrect input")
-    
-if ac_orient == 'H': #horizontal
-  while ac_row == 'none':
-    ac_row = input("Which row? \
-(Choose 'A','B','C','D','E','F','G','H','I', or 'J'): ")
-    if ac_row not in alpha_coords:
-      ac_row = 'none'
-      print("Error: incorrect input")
-  while ac_col == 'none':
-    ac_col = input("On which column does it begin? \
-(Choose '1','2','3','4','5','6','7','8','9', or '10'): ")
-    if ac_col not in numbr_coords:
-      ac_col = 'none'
-      print("Error: incorrect input")
-    elif ac_col in numbr_coords[6:11]:
-      ac_col = 'none'
-      print("Error: too far right to fit the whole ship")
-  for x in range(numbr_coords.index(ac_col),(numbr_coords.index(ac_col)+5)):
-    board[alpha_coords.index(ac_row)][x] = "*"
-  print_board(board)
-  
-elif ac_orient == 'V': #vertical
-  while ac_col == 'none':
-    ac_col = input("Which column? \
-(Choose '1','2','3','4','5','6','7','8','9', or '10': ")
-    if ac_col not in numbr_coords:
-      ac_col = 'none'
-      print("Error: incorrect input")
-  while ac_row == 'none':
-    ac_row = input("On which row does it begin? \
-(Choose 'A','B','C','D','E','F','G','H','I', or 'J'): ")
-    if ac_row not in alpha_coords:
-      ac_row = 'none'
-      print("Error: incorrect input")
-    elif ac_row in alpha_coords[6:11]:
-      ac_row = 'none'
-      print("Error: too far down to fit the whole ship")
-  for x in range(alpha_coords.index(ac_row),(alpha_coords.index(ac_row)+5)):
-    board[x][numbr_coords.index(ac_col)] = "*"
-  print_board(board)
-
-'''
-
 def place_ship(board,ship,dict_locations):
   ships = {
     'aircraft carrier': 5,
